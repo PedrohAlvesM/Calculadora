@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.''">
+    <link rel="shortcut icon" href="calculator-minimalistic-svgrepo-com.svg" type="image/x-icon">
+    <title>Calculadora</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsivo.css">
+</head>
+<body>
+    <main>
+        <input type="text" id="resultado">
+        <div class="botao operacao" onclick="Especiais('AC')">AC</div>
+        <div class="botao operacao" onclick="Especiais('C')">C</div>
+        <div class="botao operacao" onclick="Especiais('√')">√</div>
+        <div class="botao operacao" onclick="AdicionaNum('/')">/</div>
+        <div class="botao" onclick="AdicionaNum('7')">7</div>
+        <div class="botao" onclick="AdicionaNum('8')">8</div>
+        <div class="botao" onclick="AdicionaNum('9')">9</div>
+        <div class="botao operacao" onclick="AdicionaNum('*')">x</div>
+        <div class="botao" onclick="AdicionaNum('4')">4</div>
+        <div class="botao" onclick="AdicionaNum('5')">5</div>
+        <div class="botao" onclick="AdicionaNum('6')">6</div>
+        <div class="botao operacao" onclick="AdicionaNum('-')">-</div>
+        <div class="botao" onclick="AdicionaNum('1')">1</div>
+        <div class="botao" onclick="AdicionaNum('2')">2</div>
+        <div class="botao" onclick="AdicionaNum('3')">3</div>
+        <div class="botao" onclick="Especiais('()')">()</div>
+        <div class="botao operacao" onclick="AdicionaNum('+')">+</div>
+        <div class="botao" onclick="AdicionaNum('0')">0</div>
+        <div class="botao" onclick="AdicionaNum('.')">,</div>
+        <div id="igual" onclick="CalculaResultado()">=</div>
+    </main>
+
+    <script src="main.js"></script>
+    <script src="eval.js"> </script>
+</body>
+</html>
