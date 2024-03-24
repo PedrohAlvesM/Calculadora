@@ -20,17 +20,17 @@ function ValidaParentesis(expressao) {
 
     return valido
 }
-function DefineExpressao(expressao) {
-    let posfixo = [];
+function ExpressaoComoArray(expressao) {
+    let expressaoArr = [];
     let num = '';
 
     for (let i = 0; i < expressao.length; i++) {
         if (isNaN(expressao[i]) && expressao[i] !== '.') {
             if (num !== '') {
-                posfixo.push(num);
+                expressaoArr.push(num);
                 num = '';
             }
-            posfixo.push(expressao[i]);
+            expressaoArr.push(expressao[i]);
         }
         else {
             num += expressao[i];
@@ -38,9 +38,9 @@ function DefineExpressao(expressao) {
     }
 
     if (num !== '') {
-        posfixo.push(num);
+        expressaoArr.push(num);
     }
-    return posfixo
+    return expressaoArr
 }
 
 function Privilegio(a, b) {
@@ -49,6 +49,7 @@ function Privilegio(a, b) {
         "-": 1,
         "*": 2,
         "/": 2,
+        "^": 3,
     }
     if (a === "(" || b === ")") {
         return false
@@ -58,7 +59,7 @@ function Privilegio(a, b) {
     }
     return privilegio[a] > privilegio[b]
 }
-function InfixaPosfixa(expressao) {
+function InfixaParaPosfixa(expressao) {
     let posfixa = [];
     let pilhaOp = [];
 
@@ -113,8 +114,8 @@ function ResolveExpressao(expressao) {
         return "Parentesis estão errados"
     }
 
-    let expressaoTratada = DefineExpressao(expressao);
-    expressaoTratada = InfixaPosfixa(expressaoTratada);
+    let expressaoTratada = ExpressaoComoArray(expressao);
+    expressaoTratada = InfixaParaPosfixa(expressaoTratada);
     
     pilhaExpressao = [];
 
